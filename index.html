@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Pengguna CCTV Dahua</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+        }
+        
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Links */
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Inline code for highlighting */
+        code {
+            background-color: #ecf0f1;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.95em;
+        }
+
+        /* Blockquote for warnings */
+        blockquote {
+            background-color: #fffbe6;
+            border-left: 5px solid #f1c40f;
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-style: italic;
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+        
+        /* Video styling */
+        .tutorial-video {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+            background-color: #000;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Panduan Operasional DVR/NVR Dahua</h1>
+        <p>Dokumen ini berisi panduan langkah-demi-langkah untuk mengoperasikan sistem CCTV Dahua, mulai dari pengaturan awal, memulai perekaman, melihat hasil, hingga memantau penyimpanan.</p>
+        
+        <hr>
+
+        <h2>Daftar Isi</h2>
+        <ul>
+            <li><a href="#langkah-awal">Langkah Awal: Memastikan Sistem Siap Merekam</a></li>
+            <li><a href="#memulai-perekaman">Memulai Perekaman (Secara Otomatis)</a></li>
+            <li><a href="#melihat-rekaman">Melihat Hasil Rekaman (Playback)</a></li>
+            <li><a href="#memantau-penyimpanan">Memantau Batas Waktu Penyimpanan</a></li>
+            <li><a href="#video-tutorial">Video Tutorial Backup</a></li>
+            <li><a href="#troubleshooting">Troubleshooting Umum</a></li>
+        </ul>
+
+        <h2 id="langkah-awal">Langkah Awal: Memastikan Sistem Siap Merekam</h2>
+        <ol>
+            <li><strong>Atur Tanggal & Waktu yang Benar:</strong>
+                <ul>
+                    <li>Buka <code>SETTING > SISTEM > Umum</code>.</li>
+                    <li>Sesuaikan <strong>Tanggal & Waktu</strong> ke saat ini.</li>
+                    <li>Aktifkan <strong>NTP</strong> untuk sinkronisasi waktu otomatis (Zona Waktu: UTC+07:00 untuk WIB).</li>
+                    <li>Klik <code>Simpan</code>.</li>
+                </ul>
+            </li>
+            <li><strong>Format Hardisk (HDD):</strong>
+                <ul>
+                    <li>Langkah ini wajib jika ada error "Rekaman Instan" atau hardisk baru.</li>
+                    <li>Buka <code>SETTING > SIMPANAN > Pengelola Disk</code>.</li>
+                    <li>Centang hardisk yang terdeteksi, lalu klik <code>Format</code>.</li>
+                    <li>
+                        <blockquote>
+                            <p><strong>Peringatan:</strong> Ini akan menghapus semua data rekaman yang ada, tetapi TIDAK akan menghapus pengaturan sistem.</p>
+                        </blockquote>
+                    </li>
+                    <li>Tunggu hingga status hardisk menjadi <strong>Normal</strong>.</li>
+                </ul>
+            </li>
+            <li><strong>Atur Jadwal Perekaman:</strong>
+                <ul>
+                    <li>Buka <code>SETTING > SIMPANAN > Jadwal</code>.</li>
+                    <li>Pastikan semua hari terisi dengan bar <strong>hijau (Umum)</strong> untuk merekam 24 jam non-stop.</li>
+                    <li>Klik <code>Simpan</code>.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2 id="memulai-perekaman">Memulai Perekaman (Secara Otomatis)</h2>
+        <p>Perekaman akan dimulai secara <strong>OTOMATIS</strong> setelah tiga langkah di atas selesai. Anda tidak perlu menekan tombol "Start".</p>
+        <p><strong>Tanda Perekaman Berjalan:</strong></p>
+        <ul>
+            <li>Pesan error "Rekaman Instan" hilang.</li>
+            <li>(Opsional) Muncul ikon kecil (titik merah/rol film hijau) di sudut video.</li>
+            <li><strong>Bukti paling pasti:</strong> Adanya bar hijau di timeline saat melihat hasil rekaman.</li>
+        </ul>
+
+        <h2 id="melihat-rekaman">Melihat Hasil Rekaman (Playback)</h2>
+        <ol>
+            <li>Dari menu utama, klik ikon <strong><code>CARI</code></strong> (gambar rol film).</li>
+            <li>Di panel kanan, <strong>pilih tanggal</strong> di kalender.</li>
+            <li>Di bawah kalender, <strong>centang kamera</strong> yang ingin dilihat (misal: <code>A4 Channel4</code>).</li>
+            <li>Klik tombol <code>Cari</code> (biasanya tidak perlu, akan otomatis).</li>
+            <li>Lihat <strong>timeline</strong> di bagian bawah. Jika ada bar berwarna (biasanya hijau), rekaman berhasil.</li>
+            <li><strong>Klik pada bar hijau</strong> di timeline untuk memutar video dari waktu tersebut.</li>
+        </ol>
+
+
+        <h2 id="memantau-penyimpanan">Memantau Batas Waktu Penyimpanan</h2>
+        <p>Sistem akan secara otomatis menimpa (overwrite) rekaman terlama jika hardisk penuh. Anda perlu tahu berapa "jendela waktu" rekaman yang Anda miliki.</p>
+        <ol>
+            <li><strong>Cek Pengaturan Kualitas:</strong>
+                <ul>
+                    <li>Buka <code>SETTING > KAMERA > Menyandi</code>.</li>
+                    <li>Catat nilai <strong>Resolusi</strong> dan <strong>Kecepatan Bit (Kb/S)</strong>. Ini menentukan seberapa cepat hardisk penuh.</li>
+                </ul>
+            </li>
+            <li><strong>Cek Langsung:</strong>
+                <ul>
+                    <li>Cara termudah adalah dengan mengecek secara berkala.</li>
+                    <li>Misalnya, setelah 15 hari, coba buka menu <code>CARI</code> dan lihat apakah rekaman dari <strong>hari ke-1</strong> masih ada.</li>
+                    <li>Jika masih ada, coba lagi setelah 20 hari, dan seterusnya. Ini akan memberi Anda gambaran nyata tentang kapasitas penyimpanan Anda.</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h2 id="video-tutorial">Video Tutorial Backup</h2>
+        <p>Berikut adalah video tutorial yang menunjukkan cara melakukan backup klip video dari menu <code>CARI</code> ke USB Flash Drive.</p>
+        
+        <!-- Video Player -->
+        <video class="tutorial-video" controls src="videoplayback.mp4">
+            Browser Anda tidak mendukung tag video. Silakan gunakan browser modern seperti Chrome atau Firefox.
+        </video>
+        <blockquote>
+            <p><strong>Catatan:</strong> Pastikan file video bernama <code>videoplayback.mp4</code> berada di dalam folder yang sama dengan file HTML ini agar video dapat ditampilkan.</p>
+        </blockquote>
+
+
+        <h2 id="troubleshooting">Troubleshooting Umum</h2>
+        <ul>
+            <li><strong>Tidak Ada Gambar:</strong> Cek koneksi fisik kabel power dan video (BNC). Pastikan pengaturan di <code>SETTING > KAMERA > Jenis Saluran</code> sudah benar (<code>AHD</code> atau <code>AUTO</code>).</li>
+            <li><strong>Warna Video Aneh:</strong> Kemungkinan besar masalah pada kabel atau kamera itu sendiri. Lakukan tes silang dengan menukar posisi kamera.</li>
+            <li><strong>Lupa Password:</strong> Memerlukan reset fisik atau bantuan dari teknisi.</li>
+        </ul>
+    </div>
+</body>
+</html>
